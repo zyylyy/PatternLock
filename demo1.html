@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>demo1</title>
+	<meta charset="utf-8">
+	<link href="css/patternLock.css"  rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="patternHolder"></div>
+
+<script src="js/jquery.min.js"></script>
+<script src="js/patternLock.js"></script>
+<script>
+	// var lock = new PatternLock('#patternHolder',
+	// 	{
+	// 		enableSetPattern : true,
+ //            onDraw: function(pattern) { //获取密码
+ //            	console.log(pattern)
+ //            	if(pattern == "123") {
+ //            		//lock.reset() //刷新
+ //            		//lock.error()  //错误提示
+ //            	}
+ //            }
+	// 	});
+
+	/*
+	** 当前滑动的密码
+	*/		
+		// var lock = new PatternLock('#patternHolder',{
+		//     mapper: function(idx){
+		//         return (idx%9) + 1;
+		//     }
+		// });
+	/*
+	** 密码对应的数字
+	*/
+		// var lock = new PatternLock('#patternHolder',{
+		//     mapper: {1:3,2:1,3:4,4:2,5:9,6:7,7:8,8:5,9:6}
+		// });
+
+	/*
+	** 不可用
+	*/
+	    //lock.disable();
+	/*
+	** 可用
+	*/
+	    //lock.enable();
+
+	/*
+	** 设置默认密码
+	*/
+
+		var lock = new PatternLock('#patternHolder',{enableSetPattern : true});
+		lock.setPattern('12587');
+
+    /*
+    **显示的不同4*4 默认为lock.option('matrix');3*3
+    */
+
+        //lock.option('matrix',[4,4]);
+
+	/*
+	**不可用
+	*/ 
+	    // lock.disable();
+	/*
+	**判断是否正确
+	**（参数1为密码，参数2为回调函数）
+	*/ 
+		// lock.checkForPattern('12369',function(){
+		//     alert("You unlocked your app");
+		// },function(){
+		//     alert("Pattern is not correct");
+		// });
+</script>
+</body>
+</html>
